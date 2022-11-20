@@ -6078,19 +6078,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\burac\\.nuget\\packages\\": {}
+    "C:\\Users\\Bura Chuhadar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\burac\\microservices\\PlatformService\\PlatformService.csproj",
+      "projectUniqueName": "C:\\Users\\Bura Chuhadar\\microservices\\PlatformService\\PlatformService.csproj",
       "projectName": "PlatformService",
-      "projectPath": "C:\\Users\\burac\\microservices\\PlatformService\\PlatformService.csproj",
-      "packagesPath": "C:\\Users\\burac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\burac\\microservices\\PlatformService\\obj\\",
+      "projectPath": "C:\\Users\\Bura Chuhadar\\microservices\\PlatformService\\PlatformService.csproj",
+      "packagesPath": "C:\\Users\\Bura Chuhadar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bura Chuhadar\\microservices\\PlatformService\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\burac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bura Chuhadar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
