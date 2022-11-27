@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PlatformService.Data;
 using Microsoft.EntityFrameworkCore;
+using PlatformService.SyncDataServices.Http;
+using System.Net.Http;
 
 namespace PlatformService
 {
@@ -32,12 +34,23 @@ namespace PlatformService
 
             services.AddScoped<IPlatformRepo, PlatformRepo>();
 
+            services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>()
+            .ConfigureHttpMessageHandlerBuilder(builder =>
+            {
+                builder.PrimaryHandler = new HttpClientHandler
+                {
+                    ServerCertificateCustomValidationCallback = (m, c, ch, e) => true
+                };
+            });;
+
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlatformService", Version = "v1" });
             });
+
+            Console.WriteLine($"--> Command Service Endpoint {Configuration["CommandService"]}");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
