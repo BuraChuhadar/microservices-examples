@@ -15,12 +15,16 @@ using PlatformService.Data;
 using Microsoft.EntityFrameworkCore;
 using PlatformService.SyncDataServices.Http;
 using System.Net.Http;
+using PlatformService.AsyncDataServices;
+using PlatformService.SyncDataServices.Grpc;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace PlatformService
 {
     public class Startup
     {
-        
+
         public IConfiguration Configuration { get; }
 
         private readonly IWebHostEnvironment _env;
@@ -34,7 +38,7 @@ namespace PlatformService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            if(_env.IsProduction()) 
+            if (_env.IsProduction())
             {
                 Console.WriteLine("--> Using SqlServer DB");
                 services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("PlatformsConn")));
@@ -55,7 +59,10 @@ namespace PlatformService
                 {
                     ServerCertificateCustomValidationCallback = (m, c, ch, e) => true
                 };
-            });;
+            });
+            services.AddSingleton<IMessageBusClient, MessageBusClient>();
+            services.AddGrpc();
+
 
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -86,6 +93,12 @@ namespace PlatformService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGrpcService<GrpcPlatformService>();
+
+                endpoints.MapGet("/protos/platforms.proto", async context =>
+                {
+                    await context.Response.WriteAsync(File.ReadAllText("Protos/platforms.proto"));
+                });
             });
 
             PrepDb.PrepPopulation(app, _env.IsProduction());

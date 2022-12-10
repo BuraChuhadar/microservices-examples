@@ -135,3 +135,11 @@ C:\Users\Bura Chuhadar\microservices\PlatformService\obj\Debug\net5.0\ref\Platfo
 C:\Users\Bura Chuhadar\microservices\PlatformService\obj\Debug\net5.0\PlatformService.pdb
 C:\Users\Bura Chuhadar\microservices\PlatformService\obj\Debug\net5.0\PlatformService.genruntimeconfig.cache
 C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\appsettings.Production.json
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\Grpc.AspNetCore.Server.dll
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\Grpc.Core.Api.dll
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\Grpc.Net.Client.dll
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\Grpc.Net.ClientFactory.dll
+C:\Users\Bura Chuhadar\microservices\PlatformService\bin\Debug\net5.0\Grpc.Net.Common.dll
